@@ -21,6 +21,7 @@ gem "better_errors", "~> 1.1.0"
 gem 'simple_form'
 gem 'bcrypt'
 gem 'jquery-rails'
+gem "font-awesome-rails"
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'

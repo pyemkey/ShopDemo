@@ -1,5 +1,7 @@
 ShopDemo::Application.routes.draw do
-  get '/home' => 'high_voltage/pages#show', id: 'home'
+  devise_for :users
+  root "listings#index"
+  resources :listings
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

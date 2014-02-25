@@ -6,4 +6,34 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = yield
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          %button.btn.btn-success.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse"}
+            %i.fa.fa-chevron-down
+          = link_to "Gzipe", root_path, class: "navbar-brand" 
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li= link_to "About", "#"
+            %li= link_to "Contact", "#"
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li.dropdown
+                = link_to 'Seller Account <b class="caret"></b>'.html_safe, "#", class: "dropdown-toggle", data: {toggle: "dropdown"}
+                %ul.dropdown-menu
+                  %li= link_to "Manage listings", "#"
+                  %li= link_to "Sales history", "#"
+              %li.dropdown
+                = link_to "#{current_user.name} <b class='caret'></b>".html_safe, "#", class: "dropdown-toggle", data: {toggle: "dropdown"}
+                %ul.dropdown-menu
+                  %li= link_to "Purchase History", "#"
+                  %li= link_to "Edit Profile", "#"           
+                  %li= link_to "Sign Out", "#"           
+            - else
+              %li= link_to "Sign Up", new_user_registration_path
+              %li= link_to "Sign In", new_user_session_path
+    .container
+      = yield
+    %footer.navbar.navbar-default.navbar-fixed-bottom
+      .container-fluid
+        %p{class: "navbar-text"} &copy; 2014 Michal Kloda All Rights Reserved
