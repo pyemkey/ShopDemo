@@ -1,0 +1,7 @@
+= simple_form_for( @listing, html: { class: "form-vertical"} ) do |f|
+	= f.input :name
+	= f.input :description, as: :text, input_html: { class: "span12"}
+	= f.input :price
+	= f.input :listing_image, as: :file
+	= f.submit "Create Listing", class: "btn btn-primary"	
+

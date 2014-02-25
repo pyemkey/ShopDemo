@@ -1,1 +1,13 @@
 =image_tag asset_path("rsz_handcrafted.jpg"), class: "img-thumbnail"
+#items
+  - @listings.each do |listing|
+    .item
+      = image_tag listing.listing_image.url(:medium)
+      %p
+        %span= listing.name
+      %p= number_to_currency listing.price
+      %p Sold by
+
+.row
+- if user_signed_in? &&
+  = link_to "New listing", new_listing_path
