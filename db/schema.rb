@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224221850) do
+ActiveRecord::Schema.define(version: 20140225165438) do
+
+  create_table "listings", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.decimal  "price",                      precision: 8, scale: 2
+    t.string   "listing_image_file_name"
+    t.string   "listing_image_content_type"
+    t.integer  "listing_image_file_size"
+    t.datetime "listing_image_updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
