@@ -1,11 +1,25 @@
-// @import 'bootstrap';
-
-// body{ 
-// 	margin-top: 70px;
-// 	// background: #F4F5F0;
-// }
-
-// // .navbar-default .navbar-nav > li > a{
-// // 	color: #5BB6C4;
-// // 	font-weight: bold;
-// // }
+#items .item {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: white;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 1px rgba(0, 0, 0, 0.1), 0 3px 1px rgba(0, 0, 0, 0.05);
+  text-shadow: 0 1px 0 #DDDDDD;
+  width: 220px;
+  margin: 20px 20px 20px 0;
+  float: left;
+  img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+  p {
+  	color: #A6A6A6;
+  	text-align: center;
+  	span {
+  		font-weight: bold;
+  	}
+  }
+}

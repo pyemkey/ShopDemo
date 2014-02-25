@@ -9,6 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require font-awesome
+ *= require 'masonry/basic'
+ *= require 'masonry/centered'
+ *= require 'masonry/fluid'
+ *= require 'masonry/gutters'
+ *= require 'masonry/infinitescroll'
+ *= require 'masonry/right-to-left'
+ *= require 'masonry/transitions'
  *= require_self
  *= require_tree .
  */
