@@ -1,0 +1,11 @@
+.row
+	.col-lg-6
+		= image_tag @listing.listing_image.url, class: "img-thumbnail"
+	.col-lg-6
+		%h2= @listing.name
+		%p= @listing.price
+		%p= @listing.description
+		= link_to "Buy It Now", "#", class: "btn btn-success"
+.row
+	.col-lg-6
+		= link_to "Back", root_path

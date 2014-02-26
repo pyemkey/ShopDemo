@@ -1,0 +1,9 @@
+%table.table.table-striped.table-bordered
+  %tr
+    %th.col-lg-1 Image
+    %th Name
+    %th Description
+    %th.col-lg-1 Price
+    %th Action
+  = render partial: "listings/listing", collection: @listings
+
