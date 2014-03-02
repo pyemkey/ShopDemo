@@ -10,6 +10,7 @@ class ListingsController < ApplicationController
 
 	def create
 		@listing = Listing.new(secure_params)
+		@listing.user = current_user
 		if @listing.save
 			redirect_to root_path
 		else
