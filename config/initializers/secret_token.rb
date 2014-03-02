@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-ShopDemo::Application.config.secret_key_base = ENV["TOKEN"]
+ShopDemo::Application.config.secret_key_base = "#{ENV["TOKEN"]}"
