@@ -9,8 +9,7 @@ class ListingsController < ApplicationController
 	end
 
 	def create
-		@listing = Listing.new(secure_params)
-		@listing.user = current_user
+		@listing = current_user.listings.build(secure_params)
 		if @listing.save
 			redirect_to root_path
 		else
