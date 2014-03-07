@@ -4,7 +4,8 @@ class Listing < ActiveRecord::Base
     storage: :dropbox,
     dropbox_credentials: Rails.root.join("config/dropbox.yml")
   belongs_to :user
-
+  has_many :oders
+  
 	validates_presence_of :name, :description, :price, :listing_image
 	validates :description, length: { maximum: 255 }
 	validates :price, numericality: true
