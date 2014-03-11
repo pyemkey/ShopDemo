@@ -7,8 +7,9 @@ class OrdersController < ApplicationController
   def create
     listing = Listing.find(params[:listing_id])
     @order = listing.orders.build(secure_params)
+    @order.user = current_user
     if @order.save
-      redirect_to @order
+      redirect_to root_path
     else
       render :new
     end
