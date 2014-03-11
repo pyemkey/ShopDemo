@@ -2,12 +2,12 @@
 #items
   - @listings.each do |listing|
     .item
-      = image_tag listing.listing_image.url(:medium)
+      = link_to(image_tag(listing.listing_image.url(:medium)), listing)
       %p
         %span= listing.name
       %p= number_to_currency listing.price
-      %p Sold by
+      %p= "Sold by #{listing.user.name}"
 
 .row
-- if user_signed_in? &&
+- if user_signed_in?
   = link_to "New listing", new_listing_path
