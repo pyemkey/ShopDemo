@@ -11,4 +11,11 @@ class Listing < ActiveRecord::Base
 	validates :price, numericality: true
   validates_attachment_content_type :listing_image, content_type: ['image/jpg', 'image/jpeg']
 
+  def thumb
+    listing_image.url(:thumb)
+  end
+
+  def medium_image
+    listing_image.url(:medium)
+  end
 end
