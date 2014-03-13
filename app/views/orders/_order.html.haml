@@ -1,6 +1,6 @@
 %tr 
-  %td= image_tag order.listing.listing_image.url(:thumb)
-  %td= order.listing.name 
-  %td= order.listing.price
-  %td= order.user.name
-  %td= order.created_at.strftime("%B %d, %Y") 
+  %td= image_tag order.product_thumb
+  %td= order.product_name
+  %td= order.product_price
+  %td= order.user_name
+  %td= order.sold_date

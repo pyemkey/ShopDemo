@@ -2,7 +2,7 @@
 #items
   - @listings.each do |listing|
     .item
-      = link_to(image_tag(listing.listing_image.url(:medium)), listing)
+      = link_to(image_tag(listing.medium_image), listing)
       %p
         %span= listing.name
       %p= number_to_currency listing.price

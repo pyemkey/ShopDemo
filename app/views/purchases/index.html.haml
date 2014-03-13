@@ -5,6 +5,6 @@
     %th Price
     %th Seller
     %th Date Purchased
-  = render partial: "purchase", collection: @purchases
+  = render partial: "orders/order", collection: @purchases, as: :order
   
   
