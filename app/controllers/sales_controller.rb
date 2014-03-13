@@ -1,6 +1,6 @@
 class SalesController < ApplicationController
 
   def index
-    @orders = Order.where("listing_id in (?)", current_user.listings.map { |listing| listing.id })
+    @orders = Order.received_by(current_user)
   end
 end
