@@ -5,7 +5,22 @@ class OrdersController < ApplicationController
   end
 
   def create
+    card_token = params[:order][:stripe_token]
+  
     listing = Listing.find(params[:listing_id])
+    amount = (listing.price * 100).to_i
+    customer = Stripe::Customer.create(
+        email: current_user.email,
+        card: card_token
+      )
+
+    charge = Stripe::Charge.create(
+        customer: customer.id,
+        amount: amount,
+        description: listing.name,
+        currency: "usd"
+      )
+    
     @order = listing.orders.build(secure_params)
     @order.user = current_user
     if @order.save
@@ -13,11 +28,15 @@ class OrdersController < ApplicationController
     else
       render :new
     end
+    
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to root_path
   end
 
   private
 
     def secure_params
-      params.require(:order).permit(:city, :address, :state)
+      params.require(:order).permit(:city, :address, :state, :stripe_token)
     end
 end

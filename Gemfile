@@ -11,7 +11,7 @@ group :production do
   gem 'pg'
 end
 gem 'sass-rails', '~> 4.0.0'
-
+gem 'stripe'
 gem 'uglifier', '>= 1.3.0'
 gem 'haml'
 gem 'coffee-rails', '~> 4.0.0'
@@ -24,10 +24,10 @@ gem 'high_voltage', '~> 2.1.0'
 gem "better_errors", "~> 1.1.0"
 gem 'simple_form'
 gem 'bcrypt'
+gem 'pry'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'masonry-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem "paperclip-dropbox"
 group :doc do

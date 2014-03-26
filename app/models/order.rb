@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
 
   scope :received_by, -> (current_user) { where("listing_id in (?)", current_user.listings.ids) }
-
+  attr_accessor :stripe_token
   delegate :name,
            :price,
            :thumb,

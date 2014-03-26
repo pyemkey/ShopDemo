@@ -1,5 +1,20 @@
-= simple_form_for [@listing,@order] do |f|
-  = f.input :address
-  = f.input :city
-  = f.input :state
-  = f.submit "Complete Order", class: "btn btn-primary"
+.col-lg-offset-4
+  = simple_form_for([@listing,@order], html: { class: "card_form"}) do |f|
+    = f.input :address
+    = f.input :city
+    = f.input :state
+    .form-group
+      = label_tag :credit_card_number, "Credit Card Number", class: "control-label col-lg-2"
+      .col-lg-10
+        = text_field_tag :credit_card_number, nil, name: nil, class: "form-control"
+    .form-group
+      = label_tag :cvc, "CVC", class: "control-label col-lg-2"
+      .col-lg-2
+        = text_field_tag :cvc, nil, name: nil, class: "form-control"
+        
+      = label_tag :expire_date, "Expire Date", class: "control-label col-lg-2"
+      .col-lg-6
+        = select_month nil, {add_month_numbers: true}, {id: "card_month"}
+        = select_year nil,{start_year: Date.today.year, end_year: Date.today.year + 7}, {id: "card_year"}
+    = f.hidden_field :stripe_token
+    = f.submit "Complete Order", class: "btn btn-primary"

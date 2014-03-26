@@ -1,0 +1,2 @@
+Stripe.api_key = ENV["STRIPE_API_KEY"] 
+PUBLIC_STRIPE_KEY = ENV["PUBLIC_STRIPE"] 

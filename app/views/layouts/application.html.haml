@@ -3,17 +3,16 @@
   %head
     %title ShopDemo
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+    = yield(:head)
+  %body{class: "#{controller_name} #{action_name}"}
     %nav.navbar.navbar-default.navbar-fixed-top
       .container-fluid
         = render "layouts/navigation"
     .container
       = yield
       
-
-
     %footer.navbar.navbar-default.navbar-bottom
       .container-fluid
         %p{class: "navbar-text"} &copy; 2014 Michal Kloda All Rights Reserved
