@@ -11,7 +11,7 @@ alphabet = ("a".."z").to_a
   user = User.create(email: Faker::Internet.email,
                    password: "test1234",
                    name: Faker::Internet.user_name)
-  l = Listing.create(name: "loker",
+  l = Listing.create(name: Faker::Commerce.product_name,
                description: Faker::Lorem.paragraphs(1).join(" "),
                 price: rand(1..268),
                 listing_image: URI.parse("https://dl.dropboxusercontent.com/u/271407585/#{alphabet[index]}.jpg"),
