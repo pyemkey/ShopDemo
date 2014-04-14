@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id         :integer          not null, primary key
+#  address    :string(255)
+#  state      :string(255)
+#  city       :string(255)
+#  user_id    :integer
+#  listing_id :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Order < ActiveRecord::Base
   belongs_to :listing
   belongs_to :user
