@@ -27,3 +27,39 @@
 th {
   text-align: center;
 }
+.header {
+  background-image: url('https://dl.dropboxusercontent.com/u/271407585/header3.jpg');
+  background-position: center center;
+  height: 800px;
+  width: auto;
+}
+h1 {
+  color: #fff;
+}
+.header-title {
+    background-color: #30363a;
+    font-size: 55px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-transform: uppercase;
+    width: 700px;
+}
+.title-wrapper {
+    padding-top: 300px;
+    text-align: center;
+    width: 100%;
+}
+.call-to-action {
+  margin-top: 30px;
+  text-align: center;
+  a {
+    font-size: 30px;
+  }
+}
+.card-details {
+  margin-top: 40px;
+}
+.new-listing {
+  font-size: 20px;
+  margin: 40px;
+}
