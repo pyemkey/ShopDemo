@@ -1,13 +1,20 @@
-=image_tag asset_path("rsz_handcrafted.jpg"), class: "img-thumbnail"
-#items
-  - @listings.each do |listing|
-    .item
-      = link_to(image_tag(listing.medium_image), listing)
-      %p
-        %span= listing.name
-      %p= number_to_currency listing.price
-      %p= "Sold by #{listing.user.name}"
-
-.row
+-unless user_signed_in?
+  = content_for :header do
+    .header    
+      .title-wrapper
+        %h1.header-title Looking for handcrafted products
+      .call-to-action
+        =link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-success"
 - if user_signed_in?
-  = link_to "New listing", new_listing_path
+  #items
+    - @listings.each do |listing|
+      .item
+        = link_to(image_tag(listing.medium_image), listing)
+        %p
+          %span= listing.name
+        %p= number_to_currency listing.price
+        %p= "Sold by #{listing.user.name}"
+
+  .row
+  - if user_signed_in?
+    = link_to "New Product", new_listing_path, class: "btn btn-primary new-listing"
