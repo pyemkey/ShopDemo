@@ -13,14 +13,6 @@ class OrdersController < ApplicationController
         email: current_user.email,
         card: card_token
       )
-
-    charge = Stripe::Charge.create(
-        customer: customer.id,
-        amount: amount,
-        description: listing.name,
-        currency: "usd"
-      )
-    
     @order = listing.orders.build(secure_params)
     @order.user = current_user
     if @order.save
