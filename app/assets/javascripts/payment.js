@@ -29,11 +29,9 @@ $('.orders').ready(function() {
       },
       handleStripeResponse: function(status, response) {
         if (status === 200) {
-          alert(response.id);
           $('#order_stripe_token').val(response.id);
           $('.card_form')[0].submit();
         } else{
-          alert(response.error.message);
           return $('input[type=submit]').prop('disabled', false);
         }
       }
