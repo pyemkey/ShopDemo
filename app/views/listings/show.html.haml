@@ -3,7 +3,7 @@
 		= image_tag @listing.listing_image.url, class: "img-thumbnail"
 	.col-lg-6
 		%h2= @listing.name
-		%p= @listing.price
+		%p= number_to_currency @listing.price
 		%p= @listing.description
 		= link_to "Buy It Now", new_listing_order_path(@listing), class: "btn btn-success"
 .row

@@ -1,6 +1,6 @@
 %tr 
   %td= image_tag order.product_thumb
   %td= order.product_name
-  %td= order.product_price
+  %td= number_to_currency order.product_price
   %td= order.user_name
   %td= order.sold_date
