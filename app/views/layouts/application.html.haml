@@ -8,11 +8,15 @@
     = yield(:head)
   %body{class: "#{controller_name} #{action_name}"}
     %nav.navbar.navbar-default.navbar-fixed-top
-      .container-fluid
+      .container
         = render "layouts/navigation"
+    = yield(:header)
+
     .container
       = yield
       
     %footer.navbar.navbar-default.navbar-bottom
-      .container-fluid
+      .container
         %p{class: "navbar-text"} &copy; 2014 Michal Kloda All Rights Reserved
+
+    
