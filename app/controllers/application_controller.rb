@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
 	end
 
 
-  before_filter :authenticate_user!
+  
 
 end
