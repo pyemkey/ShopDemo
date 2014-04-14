@@ -27,6 +27,7 @@ gem 'modernizr-rails'
 gem 'jbuilder', '~> 1.2'
 gem "paperclip-dropbox"
 gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+gem 'faker'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -40,7 +41,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'faker'
   gem 'capybara', '~> 2.1.0'
   gem 'database_cleaner', '~> 1.0.1'
   gem 'launchy', '~> 2.3.0'
